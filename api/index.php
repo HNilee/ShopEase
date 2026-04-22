@@ -1,16 +1,12 @@
 <?php
 /**
  * Vercel Serverless Entry Point
- * Menangani routing dan menekan warning deprecation agar tidak merusak header HTTP.
+ * Disederhanakan untuk menghindari konflik inisialisasi framework.
  */
 
-// 1. Matikan semua output error ke browser (PENTING untuk Vercel)
-ini_set('display_errors', '0');
-ini_set('display_startup_errors', '0');
+// Supresi warning deprecation PHP 8.4+ agar tidak merusak header HTTP
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+ini_set('display_errors', '0');
 
-// 2. Gunakan output buffering untuk menangkap output liar sebelum header dikirim
-ob_start();
-
-// 3. Load aplikasi Laravel
+// Forward request ke Laravel public index.php
 require __DIR__ . '/../public/index.php';
