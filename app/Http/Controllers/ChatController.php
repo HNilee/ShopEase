@@ -38,7 +38,7 @@ class ChatController extends Controller
                 'order_status' => $order->status,
                 'item_count' => $order->items->count(),
                 'order_total' => $order->total,
-                'product_image' => $order->items->first()->product->image ?? null,
+                'product_image' => ($order->items->first() && $order->items->first()->product) ? $order->items->first()->product->image : null,
                 'created_at' => $lastMsg->created_at
             ]);
         }

@@ -36,30 +36,30 @@
     <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2 space-y-4">
             @forelse ($cart->items as $item)
-                <div class="flex items-center justify-between rounded-xl bg-white shadow-soft p-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between rounded-xl bg-white shadow-soft p-4 gap-4">
                     <div class="flex items-center gap-4">
-                        <img src="{{ $item->product->image ?? 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop' }}" class="w-20 h-16 object-cover rounded-md" />
+                        <img src="{{ $item->product->image ?? 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop' }}" class="w-20 h-16 object-cover rounded-md flex-shrink-0" />
                         <div>
-                            <a href="{{ route('products.show', $item->product) }}" class="font-medium">{{ $item->product->name }}</a>
+                            <a href="{{ route('products.show', $item->product) }}" class="font-medium line-clamp-1">{{ $item->product->name }}</a>
                             <div class="text-sm text-text-secondary">Rp {{ number_format($item->unit_price, 0, ',', '.') }}</div>
                             @if ($item->product->stock <= 0)
                                 <div class="mt-1 inline-block rounded-full bg-gray-200 text-gray-600 px-3 py-1 text-xs">Sold</div>
                             @endif
                         </div>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex flex-wrap items-center gap-3 justify-between sm:justify-end">
                         @if ($item->product->stock > 0)
                             <form action="{{ route('cart.item.update', $item) }}" method="POST" class="flex items-center gap-2">
                                 @csrf
                                 @method('PATCH')
-                                <input type="number" name="quantity" value="{{ $item->quantity }}" min="1" class="w-20 rounded-md border border-gray-300 px-2 py-2">
-                                <button class="rounded-full border border-gray-300 px-3 py-2 hover:bg-gray-50">Update</button>
+                                <input type="number" name="quantity" value="{{ $item->quantity }}" min="1" class="w-16 sm:w-20 rounded-md border border-gray-300 px-2 py-1.5 text-sm">
+                                <button class="rounded-full border border-gray-300 px-3 py-1.5 hover:bg-gray-50 text-sm">Update</button>
                             </form>
                         @endif
                         <form action="{{ route('cart.item.remove', $item) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="rounded-full bg-danger text-white px-3 py-2 hover:bg-danger-hover">Remove</button>
+                            <button class="rounded-full bg-danger text-white px-3 py-1.5 hover:bg-danger-hover text-sm">Remove</button>
                         </form>
                     </div>
                 </div>

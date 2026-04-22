@@ -12,8 +12,8 @@
         </a>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div class="rounded-xl overflow-hidden bg-white shadow-soft">
-            <img src="{{ $product->image ?? 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop' }}" class="w-full h-[400px] object-cover" alt="{{ $product->name }}">
+        <div class="rounded-xl overflow-hidden bg-white shadow-soft h-64 sm:h-96 lg:h-[400px]">
+            <img src="{{ $product->image ?? 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop' }}" class="w-full h-full object-cover" alt="{{ $product->name }}">
         </div>
         <div>
             <h1 class="text-3xl font-semibold">{{ $product->name }}</h1>

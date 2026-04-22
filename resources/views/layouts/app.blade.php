@@ -122,7 +122,7 @@ footer { margin-top:auto; }
                                 id="searchInput"
                                 placeholder="Search..." 
                                 autocomplete="off"
-                                class="w-0 group-hover:w-32 md:group-hover:w-48 focus:w-32 md:focus:w-48 transition-all duration-300 ease-in-out bg-transparent border-none focus:ring-0 text-sm px-0 group-hover:px-4 focus:px-4 text-text-primary dark:text-white"
+                                class="w-0 group-hover:w-32 md:group-hover:w-48 focus:w-32 md:focus:w-48 transition-all duration-300 ease-in-out bg-transparent border-none focus:ring-0 text-sm px-0 group-hover:px-4 focus:px-4 text-text-primary dark:text-white sm:w-0 sm:group-hover:w-32 sm:focus:w-32 md:group-hover:w-48 md:focus:w-48"
                             />
                             <button 
                                 type="submit" 

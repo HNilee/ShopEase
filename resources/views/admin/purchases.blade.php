@@ -17,8 +17,9 @@
             <button type="button" class="ml-auto text-success hover:opacity-70" data-alert-close>✕</button>
         </div>
     @endif
-    <div class="mt-6 overflow-hidden rounded-xl bg-white shadow-soft">
-        <table class="min-w-full divide-y divide-gray-200">
+    <div class="mt-6 overflow-x-auto rounded-xl bg-white shadow-soft">
+        <div class="min-w-full inline-block align-middle">
+            <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
                 <tr>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order Number</th>

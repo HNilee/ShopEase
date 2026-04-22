@@ -56,6 +56,11 @@ class OrderController extends Controller
     public function receipt(Order $order)
     {
         $this->ensureUserOwns($order);
+
+        // Hanya Owner dan Admin yang bisa melihat "Receipt", user biasa diarahkan ke "Order Details" (view yang sama tapi UI terbatas)
+        // Namun jika user ingin benar-benar membatasi akses ke fitur "Print", kita bisa biarkan view-nya tapi sembunyikan tombol print-nya di Blade (sudah dilakukan).
+        // Jika user minta "jangan berikan akses untuk print receipt", kita pastikan user biasa tidak bisa melihat teks "Receipt" dan tombol print.
+        
         return view('purchases.receipt', compact('order'));
     }
 }

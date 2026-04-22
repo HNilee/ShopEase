@@ -32,8 +32,9 @@
             <button type="button" class="ml-auto text-success hover:opacity-70" data-alert-close>✕</button>
         </div>
     @endif
-    <div class="mt-6 overflow-hidden rounded-xl bg-white shadow-soft">
-        <table class="min-w-full">
+    <div class="mt-6 overflow-x-auto rounded-xl bg-white shadow-soft">
+        <div class="min-w-full inline-block align-middle">
+            <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
                 <tr>
                     <th class="px-4 py-3 text-left text-sm font-medium text-text-secondary">Order</th>
@@ -62,7 +63,11 @@
                         <td class="px-4 py-3">Rp {{ number_format($o->total, 0, ',', '.') }}</td>
                         <td class="px-4 py-3">{{ $o->created_at->format('d M Y H:i') }}</td>
                         <td class="px-4 py-3 flex gap-2">
-                            <a href="{{ route('purchases.receipt', $o) }}" class="rounded-full border border-gray-300 px-3 py-2 hover:bg-gray-50 text-sm">Receipt</a>
+                            @if(auth()->user()->isAdmin() || auth()->user()->isOwner())
+                                <a href="{{ route('purchases.receipt', $o) }}" class="rounded-full border border-gray-300 px-3 py-2 hover:bg-gray-50 text-sm">Receipt</a>
+                            @else
+                                <a href="{{ route('purchases.receipt', $o) }}" class="rounded-full border border-gray-300 px-3 py-2 hover:bg-gray-50 text-sm">Order Details</a>
+                            @endif
                             <a href="{{ route('chat.show', $o) }}" class="rounded-full border border-gray-300 px-3 py-2 hover:bg-gray-50 text-sm">Chat</a>
                             @if (!$o->paid_at)
                                 <form action="{{ route('purchases.pay', $o) }}" method="POST">

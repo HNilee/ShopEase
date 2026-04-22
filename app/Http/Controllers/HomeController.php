@@ -7,12 +7,13 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $role = auth()->check() ? auth()->user()->role : 'guest';
+        $role = Auth::check() ? Auth::user()->role : 'guest';
         $usersCount = $ordersCount = $productsCount = 0;
         $totalIncome = 0;
         $chartData = [];
@@ -32,7 +33,7 @@ class HomeController extends Controller
                 'yearly' => $this->getChartData('yearly'),
             ];
         } elseif ($role === 'buyer' || $role === 'seller') {
-            $user = auth()->user();
+            $user = Auth::user();
             $recentOrders = Order::where('user_id', $user->id)
                 ->orderByDesc('created_at')
                 ->take(5)

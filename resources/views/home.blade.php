@@ -83,8 +83,8 @@
                     </div>
                 </div>
             </div>
-            <div class="rounded-xl bg-white dark:bg-gray-800 shadow-soft p-6 h-96 relative border border-gray-100 dark:border-gray-700">
-                <canvas id="salesChart"></canvas>
+            <div class="rounded-xl bg-white dark:bg-gray-800 shadow-soft p-4 sm:p-6 h-64 sm:h-96 relative border border-gray-100 dark:border-gray-700">
+                <canvas id="salesChart" data-chart="{{ json_encode($chartData ?? []) }}"></canvas>
             </div>
         </div>
 

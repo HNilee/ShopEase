@@ -6,7 +6,11 @@
         <!-- Header -->
         <div class="bg-primary px-8 py-6 text-white flex justify-between items-center print:bg-white print:text-black">
             <div>
-                <h1 class="text-2xl font-bold">ShopEase Receipt</h1>
+                @if(auth()->user()->isAdmin() || auth()->user()->isOwner())
+                    <h1 class="text-2xl font-bold">ShopEase Receipt</h1>
+                @else
+                    <h1 class="text-2xl font-bold">Order Details</h1>
+                @endif
                 <p class="text-sm opacity-90 mt-1">{{ $order->created_at->format('d M Y, H:i') }}</p>
             </div>
             <div class="text-right">
@@ -17,14 +21,14 @@
 
         <!-- Order Details -->
         <div class="p-8">
-            <div class="flex justify-between mb-8 text-sm">
+            <div class="flex flex-col sm:flex-row justify-between mb-8 text-sm gap-4">
                 <div>
                     <h3 class="text-gray-500 dark:text-gray-400 uppercase tracking-wider text-xs font-semibold mb-2">Customer</h3>
                     <p class="font-semibold text-gray-900 dark:text-white">{{ $order->customer_name }}</p>
                     <p class="text-gray-600 dark:text-gray-300">{{ $order->customer_email }}</p>
                     <p class="text-gray-600 dark:text-gray-300">{{ $order->customer_phone }}</p>
                 </div>
-                <div class="text-right">
+                <div class="sm:text-right">
                     <h3 class="text-gray-500 dark:text-gray-400 uppercase tracking-wider text-xs font-semibold mb-2">Status</h3>
                     @php
                         $statusLabel = match ($order->status) {
@@ -56,8 +60,8 @@
             </div>
 
             <!-- Items -->
-            <div class="border-t border-gray-200 dark:border-gray-700 py-4">
-                <table class="w-full text-sm">
+            <div class="border-t border-gray-200 dark:border-gray-700 py-4 overflow-x-auto">
+                <table class="w-full text-sm min-w-[400px]">
                     <thead>
                         <tr class="text-gray-500 dark:text-gray-400 text-left">
                             <th class="pb-3 font-medium">Item</th>
@@ -105,12 +109,14 @@
                 </svg>
                 Back
             </a>
-            <button onclick="window.print()" class="inline-flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition text-sm font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                </svg>
-                Print Receipt
-            </button>
+            @if(auth()->user()->isAdmin() || auth()->user()->isOwner())
+                <button onclick="window.print()" class="inline-flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition text-sm font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                    Print Receipt
+                </button>
+            @endif
         </div>
     </div>
     

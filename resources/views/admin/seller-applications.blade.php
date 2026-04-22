@@ -68,11 +68,11 @@
                                         View
                                     </button>
                                     @if($application->status === 'pending')
-                                        <button onclick="approveApplication({{ $application->id }})" 
+                                        <button onclick="approveApplication('{{ $application->id }}')" 
                                                 class="text-green-600 hover:text-green-900 bg-green-100 px-3 py-1 rounded">
                                             Approve
                                         </button>
-                                        <button onclick="rejectApplication({{ $application->id }})" 
+                                        <button onclick="rejectApplication('{{ $application->id }}')" 
                                                 class="text-red-600 hover:text-red-900 bg-red-100 px-3 py-1 rounded">
                                             Reject
                                         </button>

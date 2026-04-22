@@ -20,7 +20,7 @@
 
     <div class="rounded-xl bg-white shadow-soft p-6 mb-8">
         <h3 class="text-lg font-semibold mb-4">Profile Picture</h3>
-        <form action="{{ route('account.update_picture') }}" method="POST" enctype="multipart/form-data" class="flex items-center gap-6">
+        <form action="{{ route('account.update_picture') }}" method="POST" enctype="multipart/form-data" class="flex flex-col sm:flex-row items-center gap-6">
             @csrf
             <div class="shrink-0">
                 @if (auth()->user()->profile_pic)
@@ -31,12 +31,12 @@
                     </div>
                 @endif
             </div>
-            <div class="flex-1">
+            <div class="flex-1 w-full">
                 <label class="block text-sm font-medium text-text-primary mb-2">Change Profile Picture</label>
                 <input type="file" name="profile_pic" accept="image/*" class="block w-full text-sm text-text-secondary file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20">
                 @error('profile_pic') <div class="text-danger text-sm mt-1">{{ $message }}</div> @enderror
             </div>
-            <button class="rounded-full bg-primary text-white px-6 py-2 hover:bg-primary-hover">Upload</button>
+            <button class="w-full sm:w-auto rounded-full bg-primary text-white px-6 py-2 hover:bg-primary-hover transition-colors">Upload</button>
         </form>
     </div>
 

@@ -9,7 +9,11 @@
             <div class="text-lg font-semibold">Total: Rp {{ number_format($order->total, 0, ',', '.') }}</div>
         </div>
         <div class="mt-8 flex flex-col gap-4 sm:flex-row justify-center">
-            <a href="{{ route('purchases.receipt', $order) }}" class="inline-block rounded-full border border-gray-300 px-6 py-3 text-text-primary hover:bg-gray-50 transition">View Receipt</a>
+            @if(auth()->user()->isAdmin() || auth()->user()->isOwner())
+                <a href="{{ route('purchases.receipt', $order) }}" class="inline-block rounded-full border border-gray-300 px-6 py-3 text-text-primary hover:bg-gray-50 transition">View Receipt</a>
+            @else
+                <a href="{{ route('purchases.receipt', $order) }}" class="inline-block rounded-full border border-gray-300 px-6 py-3 text-text-primary hover:bg-gray-50 transition">View Order Details</a>
+            @endif
             <a href="{{ route('products.index') }}" class="inline-block rounded-full bg-primary text-white px-6 py-3 hover:bg-primary-hover transition">Kembali Belanja</a>
         </div>
     </div>

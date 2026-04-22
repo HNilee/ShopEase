@@ -27,8 +27,9 @@
         </div>
     @endif
 
-    <div class="overflow-hidden rounded-xl bg-white shadow-soft">
-        <table class="min-w-full">
+    <div class="mt-6 overflow-x-auto rounded-xl bg-white shadow-soft">
+        <div class="min-w-full inline-block align-middle">
+            <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
                 <tr>
                     <th class="px-4 py-3 text-left text-sm font-medium text-text-secondary">Name</th>
