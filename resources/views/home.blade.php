@@ -91,13 +91,14 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                const ctx = document.getElementById('salesChart').getContext('2d');
-                const chartData = @json($chartData);
+                const ctx = document.getElementById('salesChart')?.getContext('2d');
+                const chartData = @json($chartData ?? []);
                 let currentChart = null;
 
                 function initChart(type, metric, period = 'daily') {
+                    if (!ctx) return;
                     if (currentChart) currentChart.destroy();
-                    const dataSet = chartData[period];
+                    const dataSet = chartData[period] || { labels: [], income: [], quantity: [] };
                     const labels = dataSet.dates;
                     const data = metric === 'income' ? dataSet.income : dataSet.quantity;
                     const label = metric === 'income' ? 'Total Income (Rp)' : 'Quantity Sold';
@@ -574,7 +575,8 @@
                     }, 300); 
                 }
 
-                function startTour() {
+                function startTour(e) {
+                    if(e) e.preventDefault();
                     overlay.classList.remove('hidden');
                     document.body.style.overflow = 'hidden'; 
                     showStep(0);
@@ -587,9 +589,9 @@
                 }
 
                 if (btnTutorial) btnTutorial.addEventListener('click', startTour);
-                if (btnNext) btnNext.addEventListener('click', () => showStep(currentStep + 1));
-                if (btnPrev) btnPrev.addEventListener('click', () => showStep(currentStep - 1));
-                if (btnClose) btnClose.addEventListener('click', endTour);
+                if (btnNext) btnNext.addEventListener('click', (e) => { e.preventDefault(); showStep(currentStep + 1); });
+                if (btnPrev) btnPrev.addEventListener('click', (e) => { e.preventDefault(); showStep(currentStep - 1); });
+                if (btnClose) btnClose.addEventListener('click', (e) => { e.preventDefault(); endTour(); });
             });
         </script>
     @endif

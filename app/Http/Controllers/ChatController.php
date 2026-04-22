@@ -232,7 +232,7 @@ class ChatController extends Controller
         return $query->count();
     }
 
-    private function isConversationRead($orderId, $userId, $isAdmin = false)
+    private function isConversationRead($orderId, $userId, $isAdmin = false)    
     {
         $sessionKey = $isAdmin ? 'chat_last_seen_at_admin' : 'chat_last_seen_at_user';
         $lastSeen = session($sessionKey);
@@ -244,21 +244,6 @@ class ChatController extends Controller
             ->orderByDesc('created_at')
             ->first();
 
-        return !$latestMessage || $latestMessage->created_at <= $lastSeen;
-    }
-
-    public function createGroup(Request $request) {
-        $group = ChatGroup::create(['name' => $request->name]);
-        
-        // Masukkan user yang dipilih + Admin yang buat + Owner otomatis
-        $userIds = $request->user_ids; // Array ID dari checklist
-        $userIds[] = auth()->id(); // Admin
-        
-        // Tambahkan semua Owner secara otomatis
-        $owners = User::where('role', 'owner')->pluck('id')->toArray();
-        $allParticipants = array_unique(array_merge($userIds, $owners));
-        
-        $group->users()->attach($allParticipants);
-        return response()->json(['success' => true]);
+        return !$latestMessage || $latestMessage->created_at <= $lastSeen;      
     }
 }
