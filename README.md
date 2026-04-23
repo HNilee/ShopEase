@@ -125,12 +125,9 @@ This project is optimized for Vercel. If deploying your own instance, ensure you
 1. Information System Student of Universitas Multimedia Nusantara
 2. Crafted with passion for Web Development, E-Business, and Information System Project Management.
 
+
 <br>
-<div align="left">
-  <a href="www.linkedin.com/in/arya-pannadana-056155318/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect_with_me-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
-</div>
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Connect_with_me-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/arya-pannadana-056155318/)
 <br>
 
 <i>If you find this project helpful, please leave a ⭐️!</i>
