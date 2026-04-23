@@ -121,7 +121,7 @@ This project is optimized for Vercel. If deploying your own instance, ensure you
 
 ## 🧑🏻‍💻 Developed By
 
-## Arya Pannadana
+**Arya Pannadana**
 1. Information System Student of Universitas Multimedia Nusantara
 2. Crafted with passion for Web Development, E-Business, and Information System Project Management.
 
