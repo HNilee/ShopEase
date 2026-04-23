@@ -84,10 +84,17 @@ class AuthController extends Controller
 
         $profilePicPath = null;
         if ($request->hasFile('profile_pic')) {
-            $file = $request->file('profile_pic');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/profile_pics'), $filename);
-            $profilePicPath = 'uploads/profile_pics/' . $filename;
+            // PENYELESAIAN ERROR 500 VERCEL
+            if (config('app.env') === 'local') {
+                // Di lokal (XAMPP), simpan gambar seperti biasa
+                $file = $request->file('profile_pic');
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('uploads/profile_pics'), $filename);
+                $profilePicPath = 'uploads/profile_pics/' . $filename;
+            } else {
+                // Di Vercel, lewati penyimpanan file lokal
+                $profilePicPath = null;
+            }
         }
 
         $user = User::create([
