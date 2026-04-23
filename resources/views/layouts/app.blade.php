@@ -295,6 +295,7 @@ footer { margin-top:auto; }
 
     <main class="flex-1 bg-bg-main dark:bg-gray-900 transition-colors duration-300">
         @php
+        try {
             $announcement = \App\Models\Announcement::where('active', true)
                 ->when(auth()->check(), function ($q) {
                     $q->where(function ($qq) {
@@ -303,6 +304,9 @@ footer { margin-top:auto; }
                 })
                 ->orderByDesc('created_at')
                 ->first();
+            } catch (\Exception $e) {
+                $announcement = null;
+            }
         @endphp
         @if ($announcement)
             <div class="mx-auto max-w-7xl px-6 pt-4">
