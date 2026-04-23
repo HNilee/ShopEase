@@ -14,38 +14,8 @@
             document.documentElement.classList.remove('dark');
         }
     </script>
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                darkMode: 'class',
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: '#0070F3',
-                            'primary-hover': '#005CC5',
-                            white: '#FFFFFF',
-                            'bg-main': '#F8F9FA',
-                            'text-secondary': '#6C757D',
-                            'text-primary': '#333333',
-                            danger: '#DC3545',
-                            'danger-hover': '#C82333',
-                            success: '#28A745',
-                            warning: '#FFC107',
-                        },
-                        boxShadow: {
-                            soft: '0 10px 30px rgba(0,0,0,0.06)',
-                        },
-                        borderRadius: {
-                            xl: '16px',
-                        },
-                    }
-                }
-            }
-        </script>
-    @endif
+    
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-bg-main text-text-primary antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 min-h-screen flex flex-col" style="min-height:100vh;display:flex;flex-direction:column;">
 <style>
