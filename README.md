@@ -113,9 +113,9 @@ Want to run ShopEase on your local machine? Follow these instructions.
 
 ## ☁️ Vercel Deployment Notes
 This project is optimized for Vercel. If deploying your own instance, ensure you follow these critical environment rules:
-    1. Remove Database Credentials from vercel.json: Use the Vercel Dashboard for all sensitive DB_* environment variables.
-    2. Session Handling: Set SESSION_DRIVER=cookie in your Vercel Environment Variables to prevent serverless amnesia.
-    3. Asset Routing: Utilize \Illuminate\Support\Facades\URL::forceScheme('https'); in your AppServiceProvider to prevent mixed-content errors.
+1. Remove Database Credentials from vercel.json: Use the Vercel Dashboard for all sensitive DB_* environment variables.
+2. Session Handling: Set SESSION_DRIVER=cookie in your Vercel Environment Variables to prevent serverless amnesia.
+3. Asset Routing: Utilize \Illuminate\Support\Facades\URL::forceScheme('https'); in your AppServiceProvider to prevent mixed-content errors.
 
 ---
 
