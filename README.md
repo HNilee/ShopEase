@@ -6,6 +6,8 @@
 [![Deploy Status](https://img.shields.io/badge/Vercel-Deployed-success?style=for-the-badge&logo=vercel)](https://shopease.my.id)
 [![Laravel Version](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
 [![Database](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com)
+[![Payment Gateway](https://img.shields.io/badge/Midtrans-Payment_Gateway-00529B?style=for-the-badge)](https://midtrans.com)
+[![Hosting](https://img.shields.io/badge/Vercel-Serverless_Hosting-000000?style=for-the-badge&logo=vercel)](https://vercel.com)
 [![Status](https://img.shields.io/badge/Status-Active_Development-blue?style=for-the-badge)](#)
 
 [Visit Website](https://shopease.my.id) · [Report Bug](#) · [Request Feature](#)
