@@ -127,7 +127,7 @@ This project is optimized for Vercel. If deploying your own instance, ensure you
 
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Connect_with_me-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/arya-pannadana-056155318/)
 
-
+<br>
 <i>If you find this project helpful, please leave a ⭐️!</i>
 </div>
 
