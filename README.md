@@ -131,4 +131,5 @@ This project is optimized for Vercel. If deploying your own instance, ensure you
 ---
 <div align="center">
 <i>Copyright © 2026 ShopEase. All Rights Reserved.</i>
------
+    
+----
