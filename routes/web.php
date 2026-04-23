@@ -62,7 +62,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/purchases/clear', [OrderController::class, 'clearHistory'])->name('purchases.clear');
 
     // Chat System (Order & General)
-    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+    Route::get('/chat', function() {
+        return redirect('/')->with('message', 'Fitur obrolan kini tersedia melalui tombol popup di pojok kanan bawah.');
+    })->name('chat.index');
     Route::get('/chat/conversations', [ChatController::class, 'getConversations'])->name('chat.conversations');
     
     // --> General Chat (CS) Rute dipindah ke dalam Middleware
