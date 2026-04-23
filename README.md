@@ -125,13 +125,10 @@ This project is optimized for Vercel. If deploying your own instance, ensure you
 1. Information System Student of Universitas Multimedia Nusantara
 2. Crafted with passion for Web Development, E-Business, and Information System Project Management.
 
-<div align="center">
-<i>Copyright © 2026 ShopEase. All Rights Reserved.</i>
-
-
 <i>If you find this project helpful, please leave a ⭐️!</i>
 </div>
 
+---
+<div align="center">
+<i>Copyright © 2026 ShopEase. All Rights Reserved.</i>
 -----
-
-Bagian `🌟 The ShopEase Edge` dan `🔐 Enterprise-Grade Security` itu akan membuat dosen penguji, investor, maupun *developer* lain di GitHub langsung paham bahwa kamu merancang sistem e-commerce ini dengan tingkat kedalaman logika bisnis dan keamanan yang luar biasa matang. Silakan di-*push* ke repositorimu\!
