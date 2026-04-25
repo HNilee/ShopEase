@@ -1,66 +1,138 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🎮 ShopEase
+**Smart Shopping, Made Simple — The Premier Digital Gaming Asset Marketplace**
 
-## About Laravel
+[![Deploy Status](https://img.shields.io/badge/Vercel-Deployed-success?style=for-the-badge&logo=vercel)](https://shopease.my.id)
+[![Laravel Version](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![Database](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com)
+[![Payment Gateway](https://img.shields.io/badge/Midtrans-Payment_Gateway-00529B?style=for-the-badge)](https://midtrans.com)
+[![Hosting](https://img.shields.io/badge/Vercel-Serverless_Hosting-000000?style=for-the-badge&logo=vercel)](https://vercel.com)
+[![Status](https://img.shields.io/badge/Status-Active_Development-blue?style=for-the-badge)](#)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[Visit Website](https://shopease.my.id) · [Report Bug](#) · [Request Feature](#)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📖 Business Overview
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**ShopEase** is a dedicated B2C e-commerce platform built to solve the most critical problem in the digital gaming community: **Trust**. 
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Trading digital game assets (accounts, rare items, in-game currency) is often plagued by scams and fraudulent activities. ShopEase acts as a secure bridge between verified sellers and passionate gamers by utilizing a strict **Consignment & Escrow Model**. We hold the buyer's payment securely until the digital asset is safely delivered and verified, ensuring a zero-scam environment.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🎯 Value Proposition
+- **For Buyers:** 100% money-back guarantee if the digital asset is not delivered as promised.
+- **For Sellers:** A dedicated, targeted marketplace with guaranteed payouts for legitimate transactions.
+- **For the Ecosystem:** A streamlined, automated middleman system that reduces manual verification overhead.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ✨ Key Features
 
-### Premium Partners
+### 🛍️ User & Buyer Features
+- **Smart Catalog:** Advanced search and filtering for game assets.
+- **Dynamic Cart:** Persistent shopping cart with real-time quantity calculation.
+- **Order Tracking:** Seamless dashboard to track purchase status (Pending, Escrow, Completed).
+- **Responsive UI:** Dark/Light mode support with a clean, Tailwind-powered interface.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 🛡️ Admin & Seller Management
+- **Role-Based Access Control:** Distinct roles for Buyers, Sellers, and Admins.
+- **Escrow Dashboard:** Admin interface to manage funds and release payments upon transaction completion.
+- **Announcement System:** Global notification pop-ups controlled directly from the admin panel.
 
-## Contributing
+### 🔐 Enterprise-Grade Security
+- **Fraud Prevention & Transaction Logs:** Immutable logs tracking IP addresses, timestamps, and status changes to prevent post-purchase disputes.
+- **Data Protection Policy:** Strict adherence to privacy, ensuring sensitive KYC data is encrypted and used solely for operational security.
+- **SSL/TLS & Password Hashing:** Securing data in transit and at rest using HTTPS, bcrypt, and SHA-256.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🛠️ Technical Architecture
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+ShopEase is built with a modern, scalable serverless architecture:
 
-## Security Vulnerabilities
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | Tailwind CSS + Blade + Vite | Provides a blazing-fast, responsive user interface with native Dark Mode. |
+| **Backend** | Laravel 11.x (PHP 8.2) | Handles core business logic, routing, and robust authentication. |
+| **Database** | Supabase (PostgreSQL) | Utilizing IPv4 Connection Pooling for high-speed, serverless-compatible data storage. |
+| **Hosting** | Vercel | Serverless PHP deployment ensuring high availability and zero maintenance. |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 🚀 Local Development Guide
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Want to run ShopEase on your local machine? Follow these instructions.
+
+### Prerequisites
+- PHP >= 8.2
+- Composer
+- Node.js & NPM
+- PostgreSQL database (Local or Supabase)
+
+### Step-by-Step Installation
+
+1. **Clone the repository**
+   ```sh
+   git clone [https://github.com/your-username/ShopEase.git](https://github.com/your-username/ShopEase.git)
+   cd ShopEase
+   ```
+   
+2. **Install PHP Dependencies**
+   ```sh
+   composer install
+   ```
+
+3. **Install Frontend Assets**
+   ```sh
+   npm install
+   npm run build
+   ```
+
+4. **Environment Setup**
+   Copy the example environment file:
+   ```sh
+   cp .env.example .env
+   ```
+
+5. **Generate App Key & Migrate**
+   ```sh
+   php artisan key:generate
+   php artisan migrate --seed
+   ```
+
+6. **Serve the Application**
+   ```sh
+   php artisan serve
+   ```
+   Access the app at : http://localhost:8000
+
+---
+
+## ☁️ Vercel Deployment Notes
+This project is optimized for Vercel. If deploying your own instance, ensure you follow these critical environment rules:
+1. Remove Database Credentials from vercel.json: Use the Vercel Dashboard for all sensitive DB_* environment variables.
+2. Session Handling: Set SESSION_DRIVER=cookie in your Vercel Environment Variables to prevent serverless amnesia.
+3. Asset Routing: Utilize \Illuminate\Support\Facades\URL::forceScheme('https'); in your AppServiceProvider to prevent mixed-content errors.
+
+---
+
+## 🧑🏻‍💻 Developed By
+
+**Arya Pannadana**
+1. Information System Student of Universitas Multimedia Nusantara
+2. Crafted with passion for Web Development, E-Business, and Information System Project Management.
+
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Connect_with_me-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/arya-pannadana-056155318/)
+
+<br>
+<i>If you find this project helpful, please leave a ⭐️!</i>
+</div>
+
+---
+<div align="center">
+<i>Copyright © 2026 ShopEase. All Rights Reserved.</i>
+    
+----
