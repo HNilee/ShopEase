@@ -10,11 +10,12 @@ class DemoAccountsSeeder extends Seeder
 {
     public function run(): void
     {
+        // 1. Akun Buyer (HNile)
         User::updateOrCreate(
-            ['email' => 'aryapann12@gmail.com'],
+            ['username' => 'HNile'], // Cari berdasarkan username agar tidak bentrok
             [
+                'email' => 'aryapann12@gmail.com',
                 'name' => 'Arya Pannadana (User)',
-                'username' => 'HNile',
                 'first_name' => 'Arya',
                 'last_name' => 'Pannadana (User)',
                 'phone' => '087775933022',
@@ -24,11 +25,12 @@ class DemoAccountsSeeder extends Seeder
             ]
         );
 
+        // 2. Akun Owner
         User::updateOrCreate(
-            ['email' => 'owner@gmail.com'],
+            ['username' => 'Owner'], // Cari berdasarkan username
             [
+                'email' => 'owner@gmail.com',
                 'name' => 'ShopEase Owner',
-                'username' => 'Owner',
                 'first_name' => 'ShopEase',
                 'last_name' => 'Owner',
                 'phone' => '081234567890',
@@ -38,11 +40,12 @@ class DemoAccountsSeeder extends Seeder
             ]
         );
 
+        // 3. Akun Admin
         User::updateOrCreate(
-            ['email' => 'admin@gmail.com'],
+            ['username' => 'Admin'], // Cari berdasarkan username
             [
+                'email' => 'admin@gmail.com',
                 'name' => 'Arya Pannadana (Admin)',
-                'username' => 'Admin',
                 'first_name' => 'Arya',
                 'last_name' => 'Pannadana (Admin)',
                 'phone' => '083808479781',
